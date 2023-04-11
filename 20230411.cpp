@@ -224,50 +224,53 @@
 //} 
 
 // 연,월 입력받아서 달력찍기
-int isLeapYear(int inputYear) {
-	if ((inputYear != 0) && (inputYear % 4 == 0) && (inputYear % 100 != 0) || (inputYear % 400 == 0)) {
-		return 1;
-	} else {
-		return 0;
-	}
-}
+//int isLeapYear(int inputYear) {
+//	if ((inputYear != 0) && (inputYear % 4 == 0) && (inputYear % 100 != 0) || (inputYear % 400 == 0)) {
+//		return 1;
+//	} else {
+//		return 0;
+//	}
+//}
+//
+//int main() {
+//	int inputYear, inputMonth, lastyear, day;
+//	int totalday[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+//	
+//	printf("출력할 달력의 년,월을 입력하세요");
+//	scanf("%d %d", &inputYear, &inputMonth);
+//	if(inputMonth == 2 && isLeapYear(inputYear) == 1) {
+//		totalday[2]=29;
+//	}
+//	
+//	lastyear = inputYear - 1;
+//	
+//	day = (lastyear + (lastyear / 4) - (lastyear / 100) + (lastyear / 400) + 1) % 7; // 시작 요일 구하는 공식 
+//	
+//	for (int i = 1; i < inputMonth; i++) {
+//		day += totalday[i];
+//	}
+//	
+//	day %= 7;
+//	
+//	printf("\n%11s%d년 %d월\n"," ", inputYear,inputMonth);
+//	printf("\n  일  월  화  수  목  금  토");
+//	
+//	for (int i = -day; i < totalday[inputMonth]; i++) {
+//		if ((i + day) % 7 == 0) {
+//			printf("\n");
+//		}
+//		if (i < 0) {
+//			printf("%4s", " ");
+//		} else {
+//			printf("%4d", i + 1);
+//		}
+//	}
+//	printf("\n\n");
+//	
+//	return 0;
+//} 
 
+// 369 게임 
 int main() {
-	int inputYear, inputMonth, lastyear, day;
-	int totalday[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
 	
-	printf("출력할 달력의 년,월을 입력하세요");
-	scanf("%d %d", &inputYear, &inputMonth);
-	if(inputMonth == 2 && isLeapYear(inputYear) == 1) {
-		totalday[2]=29;
-	}
-	
-	lastyear = inputYear - 1;
-	
-	day = (lastyear + (lastyear / 4) - (lastyear / 100) + (lastyear / 400) + 1) % 7; // 시작 요일 구하는 공식 
-	
-	for (int i = 1; i < inputMonth; i++) {
-		day += totalday[i];
-	}
-	
-	day %= 7;
-	
-	printf("\n%11s%d년 %d월\n"," ", inputYear,inputMonth);
-	printf("\n  일  월  화  수  목  금  토");
-	
-	for (int i = -day; i < totalday[inputMonth]; i++) {
-		if ((i + day) % 7 == 0) {
-			printf("\n");
-		}
-		if (i < 0) {
-			printf("%4s", " ");
-		} else {
-			printf("%4d", i + 1);
-		}
-	}
-	printf("\n\n");
-	
-	return 0;
-} 
-
-
+}
