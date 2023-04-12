@@ -76,7 +76,7 @@ int main() {
 	while(cnt < input * input) {
 		int nx = x + dx[d];
 		int ny = y + dy[d];
-		if(nx < 0 || nx >= input || ny < 0 || ny >= input ) {
+		if(nx < 0 || nx >= input || ny < 0 || ny >= input || arr[nx][ny] > 0) {
 			d = (d + 1) % 4;
 			continue;
 		}
@@ -85,7 +85,6 @@ int main() {
 		x = nx;
 		y = ny;
 	}
-	
 	
 	for (int i = 0; i < input; i++) {
 		for (int j = 0; j < input; j++) {
