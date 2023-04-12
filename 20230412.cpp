@@ -63,50 +63,34 @@
 
 #include <stdio.h>
 
-int max;
-
-int  main()
-{
-  int dal[50][50];
-  int i;
-  int x=0;
-  int y=-1;
-  int t=1;
-  int p;
-  int cnt=1;
-  int jmax;
-
-  printf("배열 숫자를 입력하세요 nXn: ");
-  scanf("%d",&p);
-  max=p;
-  
-  jmax=max;
-  while(0<=jmax)
-  {
-    for(i=0;i<jmax;i++) //행 표현
-    {
-      y=y+t;
-      dal[x][y]=cnt;
-      cnt++;
-    }
-    jmax--;
-    for(i=0;i<jmax;i++)// 열 표현
-    {
-      x=x+t;
-      dal[x][y]=cnt;
-      cnt++;
-    }
-    
-    t=t*-1;
-  }
-  for(x=0;x<max;x++)// 출력 부분
-  {    
-    for(y=0;y<max;y++)
-    {
-      printf("%-4d",dal[x][y]);
-    }
-    printf("\n");
-  }
-  
-  return 0;
+int main() {
+	int input, x = 0, y = 0, cnt = 1, d = 1;
+	
+	printf("입력 : ");
+	scanf("%d", &input);
+	int arr[input][input];
+	
+	int dx[4] = {-1, 0, 1, 0};
+	int dy[4] = {0, 1, 0, -1};
+	
+	while(cnt < input * input) {
+		int nx = x + dx[d];
+		int ny = y + dy[d];
+		if(nx < 0 || nx >= input || ny < 0 || ny >= input || arr[nx][ny] > 0) {
+			d = (d + 1) % 4;
+			continue;
+		}
+		arr[x][y] = cnt;
+		cnt++;
+		x = nx;
+		y = ny;
+	}
+	
+	
+	for (int i = 0; i < input; i++) {
+		for (int j = 0; j < input; j++) {
+			printf("%d", arr[i][j]);
+		}
+		printf("\n");
+	}
 }
