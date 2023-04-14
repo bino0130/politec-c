@@ -144,40 +144,40 @@
 //}
 
 // 생일기준 만 나이 구하기 
-//int main() {
-//	struct tm*t;
-//	time_t base = time(NULL);
-//	
-//	t = localtime(&base);
-//	
-//	// tm_year는 현재 년도 - 1900한 값, tm_mon는 0~11까지 표현 
-//	printf("오늘날짜 %d년 %d월 %d일\n", t->tm_year + 1900, t->tm_mon + 1, t->tm_mday); 
-//	
-//	int birthYear, birthMonth, birthDay, age;
-//	long long socialNumber;
-//	
-// 	printf("주민번호를 입력하세요 : ");
-//    scanf("%lld", &socialNumber);
-//    
-//	birthYear = socialNumber / 100000000000 + 1900;
-//	birthMonth = (socialNumber / 1000000000) - (birthYear - 1900) * 100;
-//	birthDay = (socialNumber / 10000000) - (birthYear - 1900) * 10000 - birthMonth * 100;
-//	
-//	age = t->tm_year + 1900 - birthYear; // 기본 나이
-//	
-//	if (birthMonth - (t->tm_mon + 1) < 0) { // 태어난 달이 현재 달보다 빠른 경우 
-//		printf("만 나이 : %d\n", age); // 기본 나이 그대로 출력 
-//	} else if (birthMonth - (t->tm_mon + 1) > 0) { // 태어난 달이 현재 달보다 느린 경우 
-//		printf("만 나이 : %d\n", age - 1); // 생일이 안지났으므로 기본 나이 -1 
-//	} else { // 태어난 달이 현재 달과 같다면 
-//		if (birthDay - (t->tm_mday) < 0) { // 태어난 날로 비교 
-//			printf("만 나이 : %d\n", age);
-//		} else {
-//			printf("만 나이 : %d\n", age - 1);
-//		}
-//	}
-//	return 0;
-//}
+int main() {
+	struct tm*t;
+	time_t base = time(NULL);
+	
+	t = localtime(&base);
+	
+	// tm_year는 현재 년도 - 1900한 값, tm_mon는 0~11까지 표현 
+	printf("오늘날짜 %d년 %d월 %d일\n", t->tm_year + 1900, t->tm_mon + 1, t->tm_mday); 
+	
+	int birthYear, birthMonth, birthDay, age;
+	long long socialNumber;
+	
+ 	printf("주민번호를 입력하세요 : ");
+    scanf("%lld", &socialNumber);
+    
+	birthYear = socialNumber / 100000000000 + 1900;
+	birthMonth = (socialNumber / 1000000000) - (birthYear - 1900) * 100;
+	birthDay = (socialNumber / 10000000) - (birthYear - 1900) * 10000 - birthMonth * 100;
+	
+	age = t->tm_year + 1900 - birthYear; // 기본 나이
+	
+	if (birthMonth - (t->tm_mon + 1) < 0) { // 태어난 달이 현재 달보다 빠른 경우 
+		printf("만 나이 : %d\n", age); // 기본 나이 그대로 출력 
+	} else if (birthMonth - (t->tm_mon + 1) > 0) { // 태어난 달이 현재 달보다 느린 경우 
+		printf("만 나이 : %d\n", age - 1); // 생일이 안지났으므로 기본 나이 -1 
+	} else { // 태어난 달이 현재 달과 같다면 
+		if (birthDay - (t->tm_mday) < 0) { // 태어난 날로 비교 
+			printf("만 나이 : %d\n", age);
+		} else {
+			printf("만 나이 : %d\n", age - 1);
+		}
+	}
+	return 0;
+}
 
 // 삼항 연산자 
 //int main() {
@@ -271,6 +271,6 @@
 //} 
 
 // 369 게임 
-int main() {
-	
-}
+//int main() {
+//	
+//}
