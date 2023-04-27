@@ -29,7 +29,6 @@ public class LotteTicketPrice {
 				if (LANGUAGE.equals("KR")) {
 					setLANGUAGE("KR");
 					lc.calculPrice(LANGUAGE);
-//					li.guideComment(LANGUAGE);
 					int continueBreak = li.guideComment(LANGUAGE);
 					if (continueBreak == 1) {
 						continue;
@@ -42,7 +41,6 @@ public class LotteTicketPrice {
 				} else if (LANGUAGE.equals("US")) {
 					setLANGUAGE("US");
 					lc.calculPrice(LANGUAGE);
-//					li.guideComment(LANGUAGE);
 					int continueBreak = li.guideComment(LANGUAGE);
 					if (continueBreak == 1) {
 						continue;
@@ -54,7 +52,6 @@ public class LotteTicketPrice {
 				} else if (LANGUAGE.equals("ES")) {
 					setLANGUAGE("ES");
 					lc.calculPrice(LANGUAGE);
-//					li.guideComment(LANGUAGE);
 					int continueBreak = li.guideComment(LANGUAGE);
 					if (continueBreak == 1) {
 						continue;
