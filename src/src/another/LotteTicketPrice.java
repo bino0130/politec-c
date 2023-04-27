@@ -60,7 +60,6 @@ public class LotteTicketPrice {
 						lc.makeCsv(LANGUAGE, lc.data);
 						break;
 					}
-					
 				}
 			}
 		} catch (Exception e) {
