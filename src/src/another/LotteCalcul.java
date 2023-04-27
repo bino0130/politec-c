@@ -751,7 +751,7 @@ public class LotteCalcul {
 //		}
 	}
 
-	void makeCsv(String LANGUAGE, List<OrderList> data) {
+	void makeCsv(String LANGUAGE, List<OrderList> data) throws IOException {
 		LotteOutput lo = new LotteOutput();
 		String filePath = "C:\\Users\\Bino\\Desktop\\user.csv";
 		String charsetName = "UTF-8"; // 인코딩 방식 설정

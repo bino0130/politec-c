@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 
 public class LotteOutput {
 	int printAge(String LANGUAGE, int age) {
@@ -72,7 +73,7 @@ public class LotteOutput {
 				} else if (option == 0.85) {
 					discount = "임산부 우대적용";
 				}
-				
+
 				System.out.printf("%s %s X %d%s%d원%3s%s\n", ticketType, ageGroup, amount, " ", cost, " ", discount);
 			}
 
@@ -101,7 +102,7 @@ public class LotteOutput {
 				} else if (option == 0.85) {
 					discount = "Pregnant Discount";
 				}
-				
+
 				System.out.printf("%s %s X %d%s%d Won%3s%s\n", ticketType, ageGroup, amount, " ", cost, " ", discount);
 			}
 
@@ -130,35 +131,145 @@ public class LotteOutput {
 				} else if (option == 0.85) {
 					discount = "Aplicación preferencial para mujeres embarazadas";
 				}
-				
+
 				System.out.printf("%s %s X %d%s%d Won%3s%s\n", ticketType, ageGroup, amount, " ", cost, " ", discount);
 			}
 
 			System.out.printf("\nLa tarifa de entrada total es %d wones.\n", totalCost);
 			System.out.println("============================================================================");
 		}
-		
+
 		return null;
 	}
+
+	void readCsv(String filePath) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("csv의 파일의 어떤 항목을 읽고 싶으신가요?");
+		System.out.println("1. 전체 2. 티켓타입 3. 연령대 4. 총 가격 5. 우대사항");
+		int selectCsv = sc.nextInt();
+		if (selectCsv == 1) {
+			readAllCsv(filePath);
+		} else if (selectCsv == 2) {
+			readTicketType(filePath);
+		} else if (selectCsv == 3) {
+			readAgeGroup(filePath);
+		} else if (selectCsv == 4) {
+			readCost(filePath);
+		} else if (selectCsv == 5) {
+			readDiscount(filePath);
+		}
+	}
 	
-	void readCsv(String filePath) {
-		BufferedReader reader = null;
-		try {
-			reader = new BufferedReader(new FileReader(filePath));
-			String line = "";
-			while ((line = reader.readLine()) != null) {
-				String[] rowData = line.split(",");
-				System.out.println("Ticket type: " + rowData[0] + ", Age group: " + rowData[1] + ", Amount: "
-						+ rowData[2] + ", Cost: " + rowData[3] + ", Discount: " + rowData[4]);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				reader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+	void readAllCsv(String filePath) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(filePath));
+		String line = "";
+		
+		if((line = reader.readLine()) == null) {
+			System.out.println("빈 파일입니다.");
+		}
+		System.out.println("======================report.csv======================");
+		while ((line = reader.readLine()) != null) {
+			String[] rowData = line.split(",");
+			System.out.println("Ticket type: " + rowData[0] + ", Age group: " + rowData[1] + ", Amount: " + rowData[2]
+					+ ", Cost: " + rowData[3] + ", Discount: " + rowData[4]);
+		}
+	}
+	
+	void readTicketType(String filePath) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(filePath));
+		String line = "";
+		
+		if((line = reader.readLine()) == null) {
+			System.out.println("빈 파일입니다.");
+		}
+		System.out.println("======================Tickettype======================");
+		while ((line = reader.readLine()) != null) {
+			String[] rowData = line.split(",");
+			System.out.println("Age group: " + rowData[1]);
+		}
+	}
+	
+	void readAgeGroup(String filePath) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(filePath));
+		String line = "";
+		
+		if((line = reader.readLine()) == null) {
+			System.out.println("빈 파일입니다.");
+		}
+		System.out.println("======================AgeGroup======================");
+		while ((line = reader.readLine()) != null) {
+			String[] rowData = line.split(",");
+			System.out.println("Amount: " + rowData[2]);
+		}
+	}
+	
+	void readCost(String filePath) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(filePath));
+		String line = "";
+		
+		if((line = reader.readLine()) == null) {
+			System.out.println("빈 파일입니다.");
+		}
+		System.out.println("======================Cost======================");
+		while ((line = reader.readLine()) != null) {
+			String[] rowData = line.split(",");
+			System.out.println("Cost: " + rowData[3]);
+		}
+	}
+	
+	void readDiscount(String filePath) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(filePath));
+		String line = "";
+		
+		if((line = reader.readLine()) == null) {
+			System.out.println("빈 파일입니다.");
+		}
+		System.out.println("======================Discount======================");
+		while ((line = reader.readLine()) != null) {
+			String[] rowData = line.split(",");
+			System.out.println("Discount: " + rowData[4]);
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
