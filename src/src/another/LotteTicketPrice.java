@@ -3,18 +3,35 @@ package another;
 public class LotteTicketPrice {
 
 	// 연령별 주간권 가격
-	private final int DayOld = 46000;
-	private final int DayAdult = 59000;
-	private final int DayTeen = 52000;
-	private final int DayKids = 46000;
-	private final int DayBaby = 15000;
+	private final static int DayOld = 46000;
+	private final static int DayAdult = 59000;
+	private final static int DayTeen = 52000;
+	private final static int DayKids = 46000;
+	private final static int DayBaby = 15000;
 
 	// 연령별 야간권 가격
-	private final int NightOld = 35000;
-	private final int NightAdult = 47000;
-	private final int NightTeen = 41000;
-	private final int NightKids = 35000;
-	private final int NightBaby = 15000;
+	private final static int NightOld = 35000;
+	private final static int NightAdult = 47000;
+	private final static int NightTeen = 41000;
+	private final static int NightKids = 35000;
+	private final static int NightBaby = 15000;
+	
+	String choiceDayNightKR1 = "권종을 선택하세요.\n";
+	String choiceDayNightKR2 = "1. 주간권\n";
+	String choiceDayNightKR3 = "2. 야간권\n";
+	
+	String choiceDayNightUs1 = "Choose Ticket Type.\n";
+	String choiceDayNightUs2 = "1. Day Type\\n";
+	String choiceDayNightUs3 = "2. Night Type\n";
+	
+	String choiceDayNightES1 = "Elija la campana.\n";
+	String choiceDayNightES2 = "1. billete semanal\\n";
+	String choiceDayNightES3 = "2. billete de noche\n";
+	
+	public static final String KOREAN = "1";
+	public static final String ENGLISH = "2";
+	public static final String LANGUAGE_KR = "kr";
+	public static final String LANGUAGE_US = "us";
 
 	private String LANGUAGE = ""; // kor : 0, eng : 1
 

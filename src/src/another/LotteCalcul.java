@@ -736,19 +736,6 @@ public class LotteCalcul {
 		Locale currentLocale = Locale.getDefault();
 		System.out.println("locale : " + currentLocale.getCountry());
 		ltp.startLanguage(currentLocale.getCountry());
-//		while (true) {
-//			ltp.startLanguage(currentLocale.getCountry());
-//			calculPrice();
-//			int continueBreak = li.guideComment();
-
-//			if (continueBreak == 1) {
-//				continue;
-//			} else if (continueBreak == 2) {
-//				deliverData();
-//				makeCsv(data);
-//				break;
-//			}
-//		}
 	}
 
 	void makeCsv(String LANGUAGE, List<OrderList> data) throws IOException {
