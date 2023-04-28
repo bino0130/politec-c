@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Bino
- *
- */
-module Cworkspace {
-}
